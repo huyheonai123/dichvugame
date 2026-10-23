@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop Cày Thuê & Dịch Vụ Game Uy Tín</title>
+    <title>Shop Cày Thuê Uy Tín - Liên Quân & Roblox</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -31,7 +31,6 @@
             overflow-x: hidden;
         }
 
-        /* HEADER & NAVBAR */
         header {
             background: rgba(10, 11, 16, 0.95);
             backdrop-filter: blur(10px);
@@ -40,7 +39,7 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            padding: 12px 15px;
+            padding: 12px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -56,16 +55,16 @@
             text-transform: uppercase;
         }
 
-        .user-panel-info {
+        .header-right {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .wallet-badge {
             background: rgba(0, 240, 255, 0.1);
             border: 1px solid var(--primary);
-            padding: 4px 10px;
+            padding: 5px 10px;
             border-radius: 20px;
             font-size: 0.75rem;
             font-family: 'Orbitron', sans-serif;
@@ -73,117 +72,86 @@
             font-weight: 700;
         }
 
-        .auth-btn {
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            border: none;
-            color: #fff;
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            cursor: pointer;
-        }
-
-        /* NAVIGATION TABS */
-        .nav-tabs {
-            display: flex;
-            background: #0f111a;
-            padding: 10px 10px;
-            gap: 8px;
-            overflow-x: auto;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            margin-top: 55px;
-            white-space: nowrap;
-        }
-
-        .nav-tab-btn {
+        .menu-toggle-btn {
             background: var(--card-bg);
-            border: 1px solid rgba(255,255,255,0.1);
-            color: var(--text-gray);
-            padding: 8px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--primary);
+            font-size: 1.1rem;
+            padding: 6px 10px;
             border-radius: 8px;
-            font-size: 0.8rem;
-            font-weight: 600;
             cursor: pointer;
-            transition: 0.3s;
         }
 
-        .nav-tab-btn.active {
-            background: rgba(0, 240, 255, 0.15);
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -280px;
+            width: 280px;
+            height: 100%;
+            background: #0f111a;
+            border-left: 1px solid rgba(0, 240, 255, 0.2);
+            z-index: 2000;
+            transition: 0.3s ease;
+            padding: 20px;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.8);
+        }
+
+        .sidebar.active { right: 0; }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 12px;
+        }
+
+        .sidebar-header h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.95rem;
+            color: var(--primary);
+        }
+
+        .close-sidebar {
+            background: none;
+            border: none;
+            color: var(--text-gray);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .sidebar-menu-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            margin-bottom: 10px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.05);
+            cursor: pointer;
+        }
+
+        .sidebar-menu-item:hover {
             border-color: var(--primary);
             color: var(--primary);
         }
 
         .container {
-            max-width: 1000px;
-            margin: 0 auto;
+            max-width: 900px;
+            margin: 70px auto 30px;
             padding: 15px;
-        }
-
-        .tab-pane {
-            display: none;
-        }
-
-        .tab-pane.active {
-            display: block;
-        }
-
-        .section-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.1rem;
-            margin: 20px 0 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-left: 4px solid var(--primary);
-            padding-left: 8px;
-            text-transform: uppercase;
-        }
-
-        /* CARD & TABLES */
-        .card-box {
-            background: var(--card-bg);
-            border-radius: 14px;
-            padding: 18px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            margin-bottom: 20px;
-        }
-
-        .card-box h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .info-group {
-            margin-bottom: 12px;
-        }
-
-        .info-group label {
-            display: block;
-            font-size: 0.8rem;
-            color: var(--text-gray);
-            margin-bottom: 4px;
-        }
-
-        .info-group input, .info-group select {
-            width: 100%;
-            background: #0a0b10;
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 10px;
-            border-radius: 8px;
-            color: #fff;
-            font-size: 0.9rem;
         }
 
         .game-selector {
             display: flex;
             gap: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .game-btn {
@@ -191,7 +159,7 @@
             padding: 12px;
             background: var(--card-bg);
             border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            border-radius: 12px;
             color: var(--text);
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
@@ -206,281 +174,373 @@
             color: var(--primary);
         }
 
-        .price-table {
+        .card-box {
             background: var(--card-bg);
-            border-radius: 12px;
-            overflow: hidden;
+            border-radius: 14px;
+            padding: 20px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             margin-bottom: 20px;
         }
 
-        .price-row {
+        .card-box h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: var(--primary);
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 14px 16px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            gap: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            margin-bottom: 6px;
+        }
+
+        .form-group select, .form-group input {
+            width: 100%;
+            background: #0a0b10;
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 12px;
+            border-radius: 8px;
+            color: #fff;
             font-size: 0.9rem;
         }
 
-        .price-row:last-child { border-bottom: none; }
-
-        .rank-price {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            color: var(--primary);
-            background: rgba(0, 240, 255, 0.1);
-            padding: 5px 10px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-        }
-
-        /* HISTORY LIST */
-        .history-item {
-            background: rgba(255,255,255,0.02);
-            border-left: 3px solid var(--primary);
-            padding: 12px;
-            border-radius: 0 8px 8px 0;
-            margin-bottom: 10px;
-            font-size: 0.85rem;
-        }
-
-        .history-item.success { border-left-color: var(--success); }
-
-        .history-top {
+        .price-estimate-box {
+            background: rgba(0, 240, 255, 0.05);
+            border: 1px dashed var(--primary);
+            padding: 15px;
+            border-radius: 10px;
             display: flex;
             justify-content: space-between;
-            font-weight: 600;
-            margin-bottom: 4px;
+            align-items: center;
+            margin-bottom: 15px;
         }
 
-        .history-sub {
-            color: var(--text-gray);
-            font-size: 0.75rem;
+        .price-val {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--success);
+            font-weight: 900;
         }
-
-        /* PAYMENT QR */
-        .payment-box {
-            text-align: center;
-            background: linear-gradient(135deg, rgba(18, 20, 29, 1) 0%, rgba(30, 20, 50, 1) 100%);
-            border: 1px solid var(--secondary);
-        }
-
-        .qr-placeholder {
-            background: #fff;
-            padding: 8px;
-            border-radius: 10px;
-            display: inline-block;
-            margin: 12px 0;
-            max-width: 150px;
-        }
-
-        .qr-placeholder img { width: 100%; display: block; border-radius: 6px; }
 
         .btn-primary {
-            display: inline-block;
+            display: block;
+            width: 100%;
             background: linear-gradient(45deg, var(--primary), var(--secondary));
             color: #fff;
-            padding: 12px;
-            border-radius: 8px;
+            padding: 14px;
+            border-radius: 10px;
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
             text-transform: uppercase;
-            width: 100%;
             border: none;
             cursor: pointer;
-            font-size: 0.85rem;
-            margin-top: 10px;
+            font-size: 0.9rem;
         }
 
-        .game-content { display: none; }
-        .game-content.active { display: block; }
+        .modal-screen {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .modal-screen.active { display: flex; }
+
+        .modal-content {
+            background: var(--card-bg);
+            border: 1px solid var(--primary);
+            width: 100%;
+            max-width: 450px;
+            border-radius: 14px;
+            padding: 20px;
+            position: relative;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px; right: 15px;
+            background: none; border: none;
+            color: var(--text-gray); font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .history-item {
+            background: rgba(255,255,255,0.02);
+            border-left: 3px solid var(--success);
+            padding: 10px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 8px;
+            font-size: 0.8rem;
+        }
+
+        .qr-img {
+            max-width: 150px;
+            background: #fff;
+            padding: 6px;
+            border-radius: 8px;
+            display: block;
+            margin: 10px auto;
+        }
+
+        .game-panel { display: none; }
+        .game-panel.active { display: block; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo">⚡ SHOP CÀY THUÊ</div>
-        <div class="user-panel-info">
-            <div class="wallet-badge"><i class="fa-solid fa-wallet"></i> <span id="user-balance">200.000đ</span></div>
-            <button class="auth-btn" onclick="switchTab('auth')"><i class="fa-solid fa-user-circle"></i> Tài khoản</button>
+        <div class="header-right">
+            <div class="wallet-badge"><i class="fa-solid fa-wallet"></i> <span id="main-wallet">200.000đ</span></div>
+            <button class="menu-toggle-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
         </div>
     </header>
 
-    <!-- NAVIGATION MENU -->
-    <div class="nav-tabs">
-        <button class="nav-tab-btn active" onclick="switchTab('prices')"><i class="fa-solid fa-tags"></i> Bảng Giá</button>
-        <button class="nav-tab-btn" onclick="switchTab('deposit')"><i class="fa-solid fa-qrcode"></i> Nạp Tiền</button>
-        <button class="nav-tab-btn" onclick="switchTab('orders-history')"><i class="fa-solid fa-list-check"></i> LS Đơn Hàng</button>
-        <button class="nav-tab-btn" onclick="switchTab('deposit-history')"><i class="fa-solid fa-receipt"></i> LS Nạp Tiền</button>
-        <button class="nav-tab-btn" onclick="switchTab('auth')"><i class="fa-solid fa-lock"></i> Đăng Nhập/Ký</button>
+    <!-- SIDEBAR MENU (MỤC 3 GẠCH) -->
+    <div class="sidebar" id="sidebarMenu">
+        <div class="sidebar-header">
+            <h3>QUẢN LÝ TÀI KHOẢN</h3>
+            <button class="close-sidebar" onclick="toggleSidebar()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="sidebar-menu-item" onclick="openModal('authModal')"><i class="fa-solid fa-user-circle"></i> Đăng Nhập / Đăng Ký</div>
+        <div class="sidebar-menu-item" onclick="openModal('depositModal')"><i class="fa-solid fa-qrcode"></i> Nạp Tiền Tài Khoản</div>
+        <div class="sidebar-menu-item" onclick="openModal('orderHistoryModal')"><i class="fa-solid fa-list-check"></i> Lịch Sử Đơn Hàng</div>
+        <div class="sidebar-menu-item" onclick="openModal('depositHistoryModal')"><i class="fa-solid fa-receipt"></i> Lịch Sử Nạp Tiền</div>
     </div>
 
     <div class="container">
 
-        <!-- 1. TAB BẢNG GIÁ DỊCH VỤ -->
-        <div id="tab-prices" class="tab-pane active">
-            <div class="game-selector">
-                <button class="game-btn active" onclick="switchGame('lq')">Liên Quân Mobile</button>
-                <button class="game-btn" onclick="switchGame('blox')">Blox Fruit (Roblox)</button>
-            </div>
-
-            <!-- LIÊN QUÂN -->
-            <div id="lq-content" class="game-content active">
-                <div class="section-title">Bảng Giá Liên Quân (1 Sao = 1 Trận)</div>
-                <div class="price-table">
-                    <div class="price-row">
-                        <span>Dưới Bạch Kim → Kim Cương</span>
-                        <span class="rank-price">3.000đ / Sao</span>
-                    </div>
-                    <div class="price-row">
-                        <span>Kim Cương → Tinh Anh</span>
-                        <span class="rank-price">4.000đ / Sao</span>
-                    </div>
-                    <div class="price-row">
-                        <span>Tinh Anh → Cao Thủ</span>
-                        <span class="rank-price">5.000đ / Sao</span>
-                    </div>
-                    <div class="price-row">
-                        <span>Cao Thủ → Chiến Tướng</span>
-                        <span class="rank-price">7.000đ / Sao</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- BLOX FRUIT -->
-            <div id="blox-content" class="game-content">
-                <div class="section-title">Bảng Giá Blox Fruit</div>
-                <div class="price-table">
-                    <div class="price-row">
-                        <span>Cày Level (Sea 1, 2, 3)</span>
-                        <span class="rank-price">Từ 50.000đ</span>
-                    </div>
-                    <div class="price-row">
-                        <span>Săn Võ Godhuman / Sanguine</span>
-                        <span class="rank-price">80.000đ - 150.000đ</span>
-                    </div>
-                    <div class="price-row">
-                        <span>Kéo Tộc V4 (Full Gear)</span>
-                        <span class="rank-price">100.000đ - 200.000đ</span>
-                    </div>
-                </div>
-            </div>
+        <div class="game-selector">
+            <button class="game-btn active" onclick="switchGame('lq')"><i class="fa-solid fa-gamepad"></i> Liên Quân Mobile</button>
+            <button class="game-btn" onclick="switchGame('blox')"><i class="fa-solid fa-cube"></i> Roblox (Blox Fruit)</button>
         </div>
 
-        <!-- 2. TAB NẠP TIỀN TỰ ĐỘNG -->
-        <div id="tab-deposit" class="tab-pane">
-            <div class="card-box payment-box">
-                <h3><i class="fa-solid fa-qrcode"></i> Nạp Tiền Tự Động MB Bank</h3>
-                <p style="font-size:0.8rem; color:var(--text-gray); margin-bottom:10px;">Nhập số tiền muốn nạp, mã QR sẽ tự động cập nhật</p>
-                
-                <div class="info-group" style="text-align:left;">
-                    <label style="color:var(--primary);">Số tiền cần nạp (VNĐ):</label>
-                    <input type="number" id="deposit-input" value="10000" step="10000" oninput="updateQR()">
-                </div>
-
-                <div class="qr-placeholder">
-                    <img id="qr-img" src="https://img.vietqr.io/image/MB-0332411283-compact2.png?amount=10000&addInfo=NAPTIEN%20huyheonai123" alt="QR Code">
-                </div>
-                
-                <p style="font-weight:600; font-size:0.9rem;">MB BANK: 0332411283</p>
-                <p style="font-size:0.8rem; color:var(--text-gray);">Chủ TK: LE DUC HUY</p>
-                <p style="font-size:0.75rem; color:var(--accent); margin-top:5px;">Nội dung CK: <b id="qr-syntax" style="color:#fff;">NAPTIEN huyheonai123</b></p>
-                
-                <button onclick="simulateDeposit()" class="btn-primary" style="background:linear-gradient(45deg, #00ff88, #00b8ff); color:#000;">Xác nhận đã chuyển khoản</button>
-            </div>
-        </div>
-
-        <!-- 3. TAB LỊCH SỬ ĐƠN HÀNG -->
-        <div id="tab-orders-history" class="tab-pane">
-            <div class="section-title">Lịch Sử Đơn Cày Thuê</div>
-            <div class="history-item success">
-                <div class="history-top"><span>[Đơn #1029] Liên Quân: Kim Cương lên Tinh Anh</span> <span style="color:var(--success);">Hoàn thành</span></div>
-                <div class="history-sub">Thanh toán: 20.000đ • Thời gian: Hôm nay, 13:30</div>
-            </div>
-            <div class="history-item">
-                <div class="history-top"><span>[Đơn #1030] Blox Fruit: Săn Godhuman</span> <span style="color:#ffbb00;">Đang cày</span></div>
-                <div class="history-sub">Thanh toán: 100.000đ • Trạng thái: Tiến độ 80%</div>
-            </div>
-        </div>
-
-        <!-- 4. TAB LỊCH SỬ NẠP TIỀN -->
-        <div id="tab-deposit-history" class="tab-pane">
-            <div class="section-title">Lịch Sử Biến Động Số Dư</div>
-            <div class="history-item success">
-                <div class="history-top"><span>Nạp tiền qua MB Bank</span> <span style="color:var(--success);">+200.000đ</span></div>
-                <div class="history-sub">Mã GD: Khởi tạo số dư ví • Trạng thái: Thành công</div>
-            </div>
-        </div>
-
-        <!-- 5. TAB ĐĂNG NHẬP / ĐĂNG KÝ -->
-        <div id="tab-auth" class="tab-pane">
+        <!-- TAB 1: LIÊN QUÂN -->
+        <div id="panel-lq" class="game-panel active">
             <div class="card-box">
-                <h3><i class="fa-solid fa-lock"></i> Đăng Nhập Hệ Thống</h3>
-                <div class="info-group">
-                    <label>Tên đăng nhập</label>
-                    <input type="text" id="login-user" value="huyheonai123" placeholder="Nhập tên đăng nhập...">
+                <h3><i class="fa-solid fa-trophy"></i> Thuê Cày Rank Liên Quân</h3>
+                <div class="form-group">
+                    <label>Rank Hiện Tại Của Bạn:</label>
+                    <select id="lq-from" onchange="calculateLQ()">
+                        <option value="3000">Bạch Kim (3k / sao)</option>
+                        <option value="4000">Kim Cương (4k / sao)</option>
+                        <option value="5000">Tinh Anh (5k / sao)</option>
+                        <option value="7000">Cao Thủ (7k / sao)</option>
+                    </select>
                 </div>
-                <div class="info-group">
-                    <label>Mật khẩu</label>
-                    <input type="password" placeholder="Nhập mật khẩu...">
+                <div class="form-group">
+                    <label>Số Sao Cần Cày Lên:</label>
+                    <input type="number" id="lq-stars" value="5" min="1" max="50" oninput="calculateLQ()">
                 </div>
-                <button onclick="alert('Đăng nhập thành công!')" class="btn-primary">Đăng Nhập Ngay</button>
+                <div class="form-group">
+                    <label>Tài khoản Game (Acc / Mật khẩu):</label>
+                    <input type="text" placeholder="Nhập tài khoản & mật khẩu game...">
+                </div>
+                <div class="price-estimate-box">
+                    <span>Tổng tiền ước tính:</span>
+                    <span class="price-val" id="lq-total">20.000đ</span>
+                </div>
+                <button onclick="orderService('Liên Quân')" class="btn-primary">Thanh Toán & Gửi Đơn Ngay</button>
             </div>
+        </div>
 
+        <!-- TAB 2: BLOX FRUIT (CẬP NHẬT ĐẦY ĐỦ BẢNG GIÁ) -->
+        <div id="panel-blox" class="game-panel">
             <div class="card-box">
-                <h3><i class="fa-solid fa-user-plus"></i> Đăng Ký Tài Khoản Mới</h3>
-                <div class="info-group">
-                    <label>Tên đăng nhập mới</label>
-                    <input type="text" placeholder="Chọn tên tài khoản...">
+                <h3><i class="fa-solid fa-skull"></i> Cày Thuê Blox Fruit (Roblox)</h3>
+                
+                <div class="form-group">
+                    <label>Chọn Gói Dịch Vụ Cày Thuê:</label>
+                    <select id="blox-pkg" onchange="calculateBlox()">
+                        <!-- Cày Level -->
+                        <optgroup label="--- CÀY LEVEL ---">
+                            <option value="10000">Cày 1 - 700 : 10.000đ</option>
+                            <option value="10000">Cày 700 - 1500 : 10.000đ</option>
+                            <option value="20000">Cày 1 - 1500 : 20.000đ</option>
+                            <option value="20000">Cày 1500 - Max : 20.000đ</option>
+                            <option value="30000">Cày 1 - Max : 30.000đ</option>
+                        </optgroup>
+                        <!-- Cày Mastery -->
+                        <optgroup label="--- CÀY MASTERY ---">
+                            <option value="10000">Mastery 1 - 300 : 10.000đ</option>
+                            <option value="20000">Mastery 1 - 600 : 20.000đ</option>
+                            <option value="10000">Mastery 300 - 600 : 10.000đ</option>
+                        </optgroup>
+                        <!-- Cày Vũ Khí -->
+                        <optgroup label="--- CÀY VŨ KHÍ ---">
+                            <option value="20000">Lấy Yama : 20.000đ</option>
+                            <option value="30000">Lấy Tushita : 30.000đ</option>
+                            <option value="50000">Lấy CDK : 50.000đ</option>
+                            <option value="20000">Lấy Đinh ba gai : 20.000đ</option>
+                            <option value="50000">Lấy Lưỡi hái : 50.000đ</option>
+                            <option value="60000">Lấy Mỏ neo : 60.000đ</option>
+                        </optgroup>
+                        <!-- Cày Beli -->
+                        <optgroup label="--- CÀY BELI ---">
+                            <option value="10000">Cày 5M Beli : 10.000đ</option>
+                            <option value="40000">Cày 50M Beli : 40.000đ</option>
+                            <option value="80000">Cày 100M Beli : 80.000đ</option>
+                        </optgroup>
+                        <!-- Cày Mảnh F -->
+                        <optgroup label="--- CÀY MẢNH F ---">
+                            <option value="10000">Cày 5k Mảnh F : 10.000đ</option>
+                            <option value="50000">Cày 40k Mảnh F : 50.000đ</option>
+                            <option value="80000">Cày 80k Mảnh F : 80.000đ</option>
+                        </optgroup>
+                        <!-- Lấy Tộc V2, V3 -->
+                        <optgroup label="--- LẤY TỘC (V2, V3) ---">
+                            <option value="10000">Tộc Người (V2,3) : 10.000đ</option>
+                            <option value="10000">Tộc Thỏ (V2,3) : 10.000đ</option>
+                            <option value="10000">Tộc Cá (V2,3) : 10.000đ</option>
+                            <option value="10000">Tộc Thiên Thần (V2,3) : 10.000đ</option>
+                            <option value="30000">Tộc Quỷ (V2,3) : 30.000đ</option>
+                            <option value="50000">Tộc Cyborg (V2,3) : 50.000đ</option>
+                        </optgroup>
+                        <!-- Lấy Võ -->
+                        <optgroup label="--- LẤY VÕ ---">
+                            <option value="10000">Võ Điện (v2) : 10.000đ</option>
+                            <option value="10000">Võ Cá (v2) : 10.000đ</option>
+                            <option value="10000">Võ Rồng (v2) : 10.000đ</option>
+                            <option value="15000">Võ Superhuman : 15.000đ</option>
+                            <option value="30000">Võ Godhuman : 30.000đ</option>
+                        </optgroup>
+                    </select>
                 </div>
-                <div class="info-group">
-                    <label>Mật khẩu bảo mật</label>
-                    <input type="password" placeholder="Tạo mật khẩu...">
+
+                <div class="form-group">
+                    <label>Tài khoản Roblox (User / Mật khẩu):</label>
+                    <input type="text" placeholder="Nhập tên đăng nhập & mật khẩu Roblox...">
                 </div>
-                <button onclick="alert('Đăng ký tài khoản thành công! Bạn có thể đăng nhập ngay.')" class="btn-primary" style="background:linear-gradient(45deg, #7000ff, #ff007f);">Đăng Ký Tài Khoản</button>
+
+                <div class="price-estimate-box">
+                    <span>Tổng tiền ước tính:</span>
+                    <span class="price-val" id="blox-total">10.000đ</span>
+                </div>
+
+                <button onclick="orderService('Blox Fruit')" class="btn-primary">Thanh Toán & Gửi Đơn Ngay</button>
             </div>
         </div>
 
     </div>
 
-    <script>
-        let myBalance = 200000;
+    <!-- MODAL ĐĂNG NHẬP -->
+    <div class="modal-screen" id="authModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('authModal')"><i class="fa-solid fa-xmark"></i></button>
+            <h3 style="color:var(--primary); margin-bottom:15px;"><i class="fa-solid fa-user"></i> Tài Khoản Thành Viên</h3>
+            <div class="form-group">
+                <label>Tên đăng nhập</label>
+                <input type="text" value="huyheonai123">
+            </div>
+            <div class="form-group">
+                <label>Mật khẩu</label>
+                <input type="password" placeholder="Mật khẩu...">
+            </div>
+            <button onclick="alert('Đăng nhập thành công!'); closeModal('authModal');" class="btn-primary">Đăng Nhập</button>
+        </div>
+    </div>
 
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.nav-tab-btn').forEach(b => b.classList.remove('active'));
-            
-            document.getElementById('tab-' + tabId).classList.add('active');
-            event.currentTarget.classList.add('active');
-        }
+    <!-- MODAL NẠP TIỀN -->
+    <div class="modal-screen" id="depositModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('depositModal')"><i class="fa-solid fa-xmark"></i></button>
+            <h3 style="color:var(--primary); margin-bottom:10px;"><i class="fa-solid fa-qrcode"></i> Nạp Tiền Tự Động MB Bank</h3>
+            <div class="form-group">
+                <label>Số tiền muốn nạp (VNĐ):</label>
+                <input type="number" id="deposit-amt" value="50000" step="10000" oninput="updateQRModal()">
+            </div>
+            <img id="modal-qr" src="https://img.vietqr.io/image/MB-0332411283-compact2.png?amount=50000&addInfo=NAPTIEN%20huyheonai123" class="qr-img" alt="QR">
+            <p style="text-align:center; font-size:0.85rem; font-weight:600;">MB: 0332411283 (LE DUC HUY)</p>
+            <p style="text-align:center; font-size:0.75rem; color:var(--accent); margin-top:4px;">Nội dung CK: <b id="modal-syntax" style="color:#fff;">NAPTIEN huyheonai123</b></p>
+            <button onclick="simulateAddMoney()" class="btn-primary" style="margin-top:12px; background:linear-gradient(45deg, #00ff88, #00b8ff); color:#000;">Xác nhận đã chuyển khoản</button>
+        </div>
+    </div>
+
+    <!-- MODAL LS ĐƠN HÀNG -->
+    <div class="modal-screen" id="orderHistoryModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('orderHistoryModal')"><i class="fa-solid fa-xmark"></i></button>
+            <h3 style="color:var(--primary); margin-bottom:15px;"><i class="fa-solid fa-list-check"></i> Lịch Sử Đơn Đã Đặt</h3>
+            <div class="history-item">
+                <div style="display:flex; justify-content:space-between; font-weight:600;"><span>[Blox Fruit] Lấy Godhuman</span> <span style="color:var(--success);">Đang cày</span></div>
+                <div style="color:var(--text-gray); font-size:0.75rem; margin-top:3px;">Thanh toán: 30.000đ • Hôm nay</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL LS NẠP -->
+    <div class="modal-screen" id="depositHistoryModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('depositHistoryModal')"><i class="fa-solid fa-xmark"></i></button>
+            <h3 style="color:var(--primary); margin-bottom:15px;"><i class="fa-solid fa-receipt"></i> Lịch Sử Nạp Tiền</h3>
+            <div class="history-item">
+                <div style="display:flex; justify-content:space-between; font-weight:600;"><span>Nạp MB Bank</span> <span style="color:var(--success);">+200.000đ</span></div>
+                <div style="color:var(--text-gray); font-size:0.75rem; margin-top:3px;">Thành công • Khởi tạo ví</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let wallet = 200000;
+
+        function toggleSidebar() { document.getElementById('sidebarMenu').classList.toggle('active'); }
+        function openModal(id) { document.getElementById('sidebarMenu').classList.remove('active'); document.getElementById(id).classList.add('active'); }
+        function closeModal(id) { document.getElementById(id).classList.remove('active'); }
 
         function switchGame(game) {
             document.querySelectorAll('.game-btn').forEach(b => b.classList.remove('active'));
-            document.querySelectorAll('.game-content').forEach(c => c.classList.remove('active'));
-
+            document.querySelectorAll('.game-panel').forEach(p => p.classList.remove('active'));
             if(game === 'lq') {
                 event.currentTarget.classList.add('active');
-                document.getElementById('lq-content').classList.add('active');
+                document.getElementById('panel-lq').classList.add('active');
             } else {
                 event.currentTarget.classList.add('active');
-                document.getElementById('blox-content').classList.add('active');
+                document.getElementById('panel-blox').classList.add('active');
             }
         }
 
-        function updateQR() {
-            let amt = document.getElementById('deposit-input').value;
-            let user = document.getElementById('login-user').value || 'huyheonai';
-            let syntax = "NAPTIEN " + user;
-            document.getElementById('qr-syntax').innerText = syntax;
-            document.getElementById('qr-img').src = `https://img.vietqr.io/image/MB-0332411283-compact2.png?amount=${amt}&addInfo=${encodeURIComponent(syntax)}`;
+        function calculateLQ() {
+            let price = parseInt(document.getElementById('lq-from').value);
+            let stars = parseInt(document.getElementById('lq-stars').value) || 1;
+            document.getElementById('lq-total').innerText = (price * stars).toLocaleString() + 'đ';
         }
 
-        function simulateDeposit() {
-            let amt = parseInt(document.getElementById('deposit-input').value) || 0;
-            myBalance += amt;
-            document.getElementById('user-balance').innerText = myBalance.toLocaleString() + 'đ';
-            alert('Hệ thống đã ghi nhận yêu cầu nạp ' + amt.toLocaleString() + 'đ! Số dư ví đã được cộng.');
+        function calculateBlox() {
+            let price = parseInt(document.getElementById('blox-pkg').value);
+            document.getElementById('blox-total').innerText = price.toLocaleString() + 'đ';
+        }
+
+        function updateQRModal() {
+            let amt = document.getElementById('deposit-amt').value;
+            document.getElementById('modal-syntax').innerText = "NAPTIEN huyheonai123";
+            document.getElementById('modal-qr').src = `https://img.vietqr.io/image/MB-0332411283-compact2.png?amount=${amt}&addInfo=NAPTIEN%20huyheonai123`;
+        }
+
+        function simulateAddMoney() {
+            let amt = parseInt(document.getElementById('deposit-amt').value) || 0;
+            wallet += amt;
+            document.getElementById('main-wallet').innerText = wallet.toLocaleString() + 'đ';
+            alert('Đã giả lập nạp thành công ' + amt.toLocaleString() + 'đ vào ví!');
+            closeModal('depositModal');
+        }
+
+        function orderService(game) {
+            alert('Đặt đơn ' + game + ' thành công! Hệ thống đã ghi nhận yêu cầu của bạn.');
         }
     </script>
 </body>
