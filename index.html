@@ -12,10 +12,10 @@
             --secondary: #7000ff;
             --accent: #ff007f;
             --dark: #0a0b10;
-            --darker: #050508;
             --card-bg: #12141d;
             --text: #ffffff;
             --text-gray: #a0aec0;
+            --success: #00ff88;
         }
 
         * {
@@ -39,7 +39,7 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            padding: 15px 20px;
+            padding: 12px 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -47,7 +47,7 @@
 
         .logo {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: 900;
             background: linear-gradient(45deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
@@ -55,103 +55,94 @@
             text-transform: uppercase;
         }
 
-        .nav-links {
+        .user-quick-info {
             display: flex;
-            gap: 15px;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid var(--primary);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
         }
 
-        .nav-links a {
+        .user-quick-info span {
+            color: var(--success);
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .nav-tabs {
+            display: flex;
+            background: #0f111a;
+            padding: 10px;
+            gap: 8px;
+            overflow-x: auto;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            margin-top: 60px;
+            white-space: nowrap;
+        }
+
+        .nav-tab-btn {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
             color: var(--text-gray);
-            text-decoration: none;
-            font-size: 0.9rem;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
             font-weight: 600;
+            cursor: pointer;
             transition: 0.3s;
         }
 
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--primary);
-            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-        }
-
-        .hero {
-            padding: 120px 20px 40px;
-            text-align: center;
-            background: radial-gradient(circle at center, rgba(112, 0, 255, 0.15) 0%, rgba(10, 11, 16, 1) 70%);
-        }
-
-        .hero h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 900;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .hero h1 span {
-            color: var(--primary);
-            text-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
-        }
-
-        .hero p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-            max-width: 600px;
-            margin: 0 auto 25px;
-        }
-
-        .badge-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .badge {
-            background: rgba(0, 240, 255, 0.1);
-            border: 1px solid var(--primary);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
+        .nav-tab-btn.active {
+            background: rgba(0, 240, 255, 0.15);
+            border-color: var(--primary);
             color: var(--primary);
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 20px 15px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
         }
 
         .section-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.3rem;
-            margin: 30px 0 20px;
+            font-size: 1.1rem;
+            margin: 20px 0 15px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             border-left: 4px solid var(--primary);
-            padding-left: 10px;
+            padding-left: 8px;
             text-transform: uppercase;
         }
 
         .game-selector {
             display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
+            gap: 10px;
+            margin-bottom: 20px;
         }
 
         .game-btn {
             flex: 1;
-            padding: 15px;
+            padding: 12px;
             background: var(--card-bg);
             border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
+            border-radius: 10px;
             color: var(--text);
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             cursor: pointer;
             transition: 0.3s;
             text-align: center;
@@ -160,290 +151,282 @@
         .game-btn.active {
             border-color: var(--primary);
             background: rgba(0, 240, 255, 0.1);
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
             color: var(--primary);
         }
 
         .price-table {
             background: var(--card-bg);
-            border-radius: 16px;
+            border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.05);
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .price-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 20px;
+            padding: 14px 16px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.2s;
         }
 
         .price-row:last-child {
             border-bottom: none;
         }
 
-        .price-row:hover {
-            background: rgba(255, 255, 255, 0.02);
-        }
-
         .rank-info {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
         }
 
         .rank-info i {
             color: var(--primary);
-            font-size: 1.1rem;
-        }
-
-        .rank-name {
-            font-weight: 600;
-            font-size: 0.95rem;
         }
 
         .rank-price {
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
             color: var(--primary);
-            font-size: 1rem;
+            font-size: 0.9rem;
             background: rgba(0, 240, 255, 0.1);
-            padding: 6px 12px;
-            border-radius: 8px;
+            padding: 5px 10px;
+            border-radius: 6px;
         }
 
-        .notes-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        @media(min-width: 768px) {
-            .notes-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
+        /* Profile & History Styling */
         .card-box {
             background: var(--card-bg);
-            border-radius: 16px;
-            padding: 20px;
+            border-radius: 12px;
+            padding: 18px;
             border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 20px;
         }
 
         .card-box h3 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1rem;
-            margin-bottom: 15px;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
             color: var(--primary);
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .card-box ul {
-            list-style: none;
+        .info-group {
+            margin-bottom: 12px;
         }
 
-        .card-box li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
+        .info-group label {
+            display: block;
+            font-size: 0.8rem;
             color: var(--text-gray);
+            margin-bottom: 4px;
         }
 
-        .card-box li::before {
-            content: "•";
-            color: var(--accent);
-            font-weight: bold;
-            font-size: 1.2rem;
-            position: absolute;
-            left: 0;
-            top: -2px;
+        .info-group input {
+            width: 100%;
+            background: #0a0b10;
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 10px;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 0.9rem;
         }
 
-        .payment-box {
+        .history-item {
+            background: rgba(255,255,255,0.02);
+            border-left: 3px solid var(--primary);
+            padding: 12px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+        }
+
+        .history-item.success {
+            border-left-color: var(--success);
+        }
+
+        .history-top {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .history-sub {
+            color: var(--text-gray);
+            font-size: 0.75rem;
+        }
+
+        .qr-box {
             text-align: center;
             background: linear-gradient(135deg, rgba(18, 20, 29, 1) 0%, rgba(30, 20, 50, 1) 100%);
             border: 1px solid var(--secondary);
+            padding: 20px;
+            border-radius: 12px;
         }
 
         .qr-placeholder {
             background: #fff;
-            padding: 10px;
-            border-radius: 12px;
+            padding: 8px;
+            border-radius: 10px;
             display: inline-block;
-            margin: 15px 0;
-            max-width: 180px;
+            margin: 10px 0;
+            max-width: 160px;
         }
 
         .qr-placeholder img {
             width: 100%;
-            height: auto;
             display: block;
-            border-radius: 6px;
+            border-radius: 4px;
         }
 
-        .bank-info {
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--text);
-            margin-top: 5px;
-        }
-
-        .cta-section {
-            text-align: center;
-            padding: 30px 20px 60px;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            color: var(--text);
-            padding: 15px 35px;
-            border-radius: 30px;
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            text-decoration: none;
-            text-transform: uppercase;
-            box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
-            transition: 0.3s;
-            font-size: 0.95rem;
-        }
-
-        .btn-primary:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(0, 240, 255, 0.7);
-        }
-
-        .game-content {
-            display: none;
-        }
-
-        .game-content.active {
-            display: block;
-        }
+        .game-content { display: none; }
+        .game-content.active { display: block; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo">⚡ SHOP CÀY THUÊ</div>
-        <div class="nav-links">
-            <a href="#prices" class="active">Bảng Giá</a>
-            <a href="#notes">Lưu Ý</a>
-            <a href="#pay">Thanh Toán</a>
+        <div class="user-quick-info">
+            <i class="fa-solid fa-wallet"></i> Số dư: <span id="balance-display">200.000đ</span>
         </div>
     </header>
 
-    <section class="hero">
-        <h1>Dịch Vụ Cày Thuê <span>Uy Tín - Giá Rẻ</span></h1>
-        <p>Hệ thống cày rank Liên Quân và cày cuốc Roblox (Blox Fruit) siêu tốc, an toàn tuyệt đối 100%, bảo mật thông tin.</p>
-        <div class="badge-container">
-            <div class="badge"><i class="fa-solid fa-shield-halved"></i> Bảo Mật Thông Tin</div>
-            <div class="badge"><i class="fa-solid fa-bolt"></i> Cày Nhanh Siêu Tốc</div>
-            <div class="badge"><i class="fa-solid fa-check-circle"></i> Không Dùng Tool Hack</div>
-        </div>
-    </section>
+    <div class="nav-tabs">
+        <button class="nav-tab-btn active" onclick="switchTab('prices')"><i class="fa-solid fa-tags"></i> Bảng Giá</button>
+        <button class="nav-tab-btn" onclick="switchTab('profile')"><i class="fa-solid fa-user"></i> Tài Khoản</button>
+        <button class="nav-tab-btn" onclick="switchTab('boosting-history')"><i class="fa-solid fa-clock-rotate-left"></i> LS Cày Thuê</button>
+        <button class="nav-tab-btn" onclick="switchTab('deposit')"><i class="fa-solid fa-money-bill-transfer"></i> Nạp Tiền</button>
+        <button class="nav-tab-btn" onclick="switchTab('deposit-history')"><i class="fa-solid fa-receipt"></i> LS Nạp Tiền</button>
+    </div>
 
-    <div class="container" id="prices">
-        <div class="game-selector">
-            <button class="game-btn active" onclick="switchGame('lq')"><i class="fa-solid fa-gamepad"></i> Liên Quân Mobile</button>
-            <button class="game-btn" onclick="switchGame('blox')"><i class="fa-solid fa-cube"></i> Roblox (Blox Fruit)</button>
-        </div>
+    <div class="container">
 
-        <!-- LIEN QUAN CONTENT -->
-        <div id="lq-content" class="game-content active">
-            <div class="section-title"><i class="fa-solid fa-trophy"></i> Bảng Giá Cày Rank Liên Quân (1 Sao = 1 Trận Thắng)</div>
-            <div class="price-table">
-                <div class="price-row">
-                    <div class="rank-info"><i class="fa-solid fa-medal"></i><span class="rank-name">Dưới Bạch Kim</span></div>
-                    <div class="rank-price">3.000đ / Sao</div>
+        <!-- TAB 1: BẢNG GIÁ -->
+        <div id="tab-prices" class="tab-content active">
+            <div class="game-selector">
+                <button class="game-btn active" onclick="switchGame('lq')">Liên Quân Mobile</button>
+                <button class="game-btn" onclick="switchGame('blox')">Blox Fruit (Roblox)</button>
+            </div>
+
+            <!-- LIÊN QUÂN -->
+            <div id="lq-content" class="game-content active">
+                <div class="section-title">Bảng Giá Liên Quân (1 Sao = 1 Trận)</div>
+                <div class="price-table">
+                    <div class="price-row">
+                        <div class="rank-info"><i class="fa-solid fa-medal"></i><span>Dưới Bạch Kim → Kim Cương</span></div>
+                        <div class="rank-price">3.000đ / Sao</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="rank-info"><i class="fa-solid fa-medal"></i><span>Kim Cương → Tinh Anh</span></div>
+                        <div class="rank-price">4.000đ / Sao</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="rank-info"><i class="fa-solid fa-medal"></i><span>Tinh Anh → Cao Thủ</span></div>
+                        <div class="rank-price">5.000đ / Sao</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="rank-info"><i class="fa-solid fa-crown"></i><span>Cao Thủ → Chiến Tướng</span></div>
+                        <div class="rank-price">7.000đ / Sao</div>
+                    </div>
                 </div>
-                <div class="price-row">
-                    <div class="rank-info"><i class="fa-solid fa-medal"></i><span class="rank-name">Bạch Kim → Kim Cương</span></div>
-                    <div class="rank-price">3.000đ / Sao</div>
-                </div>
-                <div class="price-row">
-                    <div class="rank-info"><i class="fa-solid fa-medal"></i><span class="rank-name">Kim Cương → Tinh Anh</span></div>
-                    <div class="rank-price">4.000đ / Sao</div>
-                </div>
-                <div class="price-row">
-                    <div class="rank-info"><i class="fa-solid fa-medal"></i><span class="rank-name">Tinh Anh → Cao Thủ 1s</span></div>
-                    <div class="rank-price">5.000đ / Sao</div>
-                </div>
-                <div class="price-row">
-                    <div class="rank-info"><i class="fa-solid fa-crown"></i><span class="rank-name">Cao Thủ 1s → Cao Thủ 20s</span></div>
-                    <div class="rank-price">6.000đ / Sao</div>
-                </div>
-                <div class="price-row">
-                    <div class="rank-info"><i class="fa-solid fa-crown"></i><span class="rank-name">Cao Thủ 20s → Chiến Tướng</span></div>
-                    <div class="rank-price">7.000đ / Sao</div>
-                </div>
-                <div class="price-row">
-                    <div class="rank-info"><i class="fa-solid fa-user-gear"></i><span class="rank-name">Auto Tướng (Yêu cầu riêng)</span></div>
-                    <div class="rank-price">+2.000đ / Trận</div>
+            </div>
+
+            <!-- BLOX FRUIT -->
+            <div id="blox-content" class="game-content">
+                <div class="section-title">Bảng Giá Blox Fruit</div>
+                <div class="price-table">
+                    <div class="price-row">
+                        <div class="rank-info"><i class="fa-solid fa-arrow-up"></i><span>Cày Level (Sea 1, 2, 3)</span></div>
+                        <div class="rank-price">Từ 50.000đ</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="rank-info"><i class="fa-solid fa-fire"></i><span>Săn Võ Godhuman / Sanguine</span></div>
+                        <div class="rank-price">80.000đ - 150.000đ</div>
+                    </div>
+                    <div class="price-row">
+                        <div class="rank-info"><i class="fa-solid fa-bolt"></i><span>Kéo Tộc V4 (Full Gear)</span></div>
+                        <div class="rank-price">100.000đ - 200.000đ</div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- BLOX FRUIT CONTENT -->
-        <div id="blox-content" class="game-content">
-            <div class="section-title"><i class="fa-solid fa-skull"></i> Bảng Giá Cày Thuê Blox Fruit (Roblox)</div>
-            <div class="price-table">
-                <div class="price-row">
-                    <div class="rank-info"><i class="fa-solid fa-arrow-up"></i><span class="rank-name">Cày Level (Sea 1, 2, 3) / Gói cơ bản</span></div>
-                    <div class="rank-price">Từ 50.000đ</div>
-                </div>
-                <div class="price-row">
-                    <div class="rank-info"><i class="fa-solid fa-fire"></i><span class="rank-name">Cày Đấm Săn Võ (Godhuman / Sanguine Art)</span></div>
-                    <div class="rank-price">80.000đ - 150.000đ</div>
-                </div>
-                <div class="price-row">
-                    <div class="rank-info"><i class="fa-solid fa-bolt"></i><span class="rank-name">Kéo Tộc V4 (Full Gear / Thức tỉnh tộc)</span></div>
-                    <div class="rank-price">100.000đ - 200.000đ</div>
-                </div>
-                <div class="price-row">
-                    <div class="rank-info"><i class="fa-solid fa-coins"></i><span class="rank-name">Cày Beli & Fragment (Mảnh hồn)</span></div>
-                    <div class="rank-price">Thỏa thuận</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="notes-grid" id="notes">
+        <!-- TAB 2: TÀI KHOẢN -->
+        <div id="tab-profile" class="tab-content">
             <div class="card-box">
-                <h3><i class="fa-solid fa-circle-exclamation"></i> Lưu Ý Quan Trọng</h3>
-                <ul>
-                    <li>Uy tín tài khoản không dưới 95 điểm.</li>
-                    <li>Nhận các tài khoản (acc) bình thường, không giới hạn tướng.</li>
-                    <li>Không nhận tướng SP (Trợ thủ) đơn và các tướng ngoài Meta hiện tại.</li>
-                    <li>Hỗ trợ thanh toán qua chuyển khoản, thẻ cào hoặc MOMO / MB Bank.</li>
-                </ul>
-            </div>
-            
-            <div class="card-box payment-box" id="pay">
-                <h3><i class="fa-solid fa-qrcode"></i> Thông Tin Thanh Toán</h3>
-                <div class="qr-placeholder">
-                    <!-- Thay link ảnh QR của bạn vào src bên dưới -->
-                    <img src="https://img.vietqr.io/image/MB-0332411283-compact2.png" alt="QR Thanh Toán">
+                <h3><i class="fa-solid fa-id-badge"></i> Thông Tin Đăng Nhập & Ví</h3>
+                <div class="info-group">
+                    <label>Tên đăng nhập / Biệt danh Shop</label>
+                    <input type="text" id="username-input" value="huyheonai123" placeholder="Nhập tên của bạn...">
                 </div>
-                <p class="bank-info">MB BANK: 0332411283</p>
-                <p style="color: var(--text-gray); font-size: 0.85rem; margin-top: 5px;">Chủ tài khoản: LE DUC HUY</p>
+                <div class="info-group">
+                    <label>Số điện thoại / Zalo liên hệ</label>
+                    <input type="text" value="0332411283">
+                </div>
+                <div class="info-group">
+                    <label>Số dư hiện tại trong ví</label>
+                    <input type="text" value="200.000 VNĐ" disabled style="color: var(--success); font-weight: bold;">
+                </div>
+                <button onclick="alert('Đã lưu thông tin thành công!')" style="width:100%; background:linear-gradient(45deg, var(--primary), var(--secondary)); border:none; padding:12px; border-radius:8px; color:#fff; font-weight:700; font-family:'Orbitron', sans-serif; cursor:pointer;">Cập Nhật Thông Tin</button>
             </div>
         </div>
 
-        <div class="cta-section">
-            <a href="https://m.me/" target="_blank" class="btn-primary"><i class="fa-brands fa-facebook-messenger"></i> Liên hệ chốt đơn ngay</a>
+        <!-- TAB 3: LỊCH SỬ CÀY THUÊ -->
+        <div id="tab-boosting-history" class="tab-content">
+            <div class="section-title">Lịch Sử Nhận Cày Thuê</div>
+            <div class="history-item success">
+                <div class="history-top"><span>[Liên Quân] Kim Cương lên Tinh Anh (5 Sao)</span> <span style="color:var(--success);">Hoàn thành</span></div>
+                <div class="history-sub">Khách: NguyenVanA • Nhận: 20.000đ • Trạng thái: Đã trả acc an toàn</div>
+            </div>
+            <div class="history-item">
+                <div class="history-top"><span>[Blox Fruit] Cày Godhuman</span> <span style="color:#ffbb00;">Đang thực hiện</span></div>
+                <div class="history-sub">Khách: RobloxVN99 • Nhận: 100.000đ • Trạng thái: Đang cày (80%)</div>
+            </div>
         </div>
+
+        <!-- TAB 4: NẠP TIỀN -->
+        <div id="tab-deposit" class="tab-content">
+            <div class="qr-box">
+                <h3><i class="fa-solid fa-qrcode"></i> Quét QR Chuyển Khoản Nạp Tiền</h3>
+                <p style="font-size: 0.85rem; color: var(--text-gray); margin-bottom: 10px;">Hệ thống tự động cộng tiền sau 1-2 phút</p>
+                <div class="qr-placeholder">
+                    <img src="https://img.vietqr.io/image/MB-0332411283-compact2.png" alt="QR Nạp Tiền">
+                </div>
+                <p style="font-weight:600; font-size:0.95rem; margin-top:5px;">MB BANK: 0332411283</p>
+                <p style="font-size:0.85rem; color:var(--text-gray);">Chủ TK: LE DUC HUY</p>
+                <p style="font-size:0.8rem; color:var(--accent); margin-top:8px;">Nội dung chuyển khoản: <b style="color:#fff;">NAPTIEN HUYHEONAI</b></p>
+            </div>
+        </div>
+
+        <!-- TAB 5: LỊCH SỬ NẠP TIỀN -->
+        <div id="tab-deposit-history" class="tab-content">
+            <div class="section-title">Lịch Sử Nạp Tiền Gần Đây</div>
+            <div class="history-item success">
+                <div class="history-top"><span>Nạp qua MB Bank</span> <span style="color:var(--success);">+200.000đ</span></div>
+                <div class="history-sub">Mã GD: MBFT2026... • Thời gian: Hôm nay, 13:00</div>
+            </div>
+        </div>
+
     </div>
 
     <script>
+        function switchTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(t => t.classList.remove('active'));
+            
+            const btns = document.querySelectorAll('.nav-tab-btn');
+            btns.forEach(b => b.classList.remove('active'));
+
+            document.getElementById('tab-' + tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
         function switchGame(game) {
             const btns = document.querySelectorAll('.game-btn');
             btns.forEach(btn => btn.classList.remove('active'));
